@@ -37,3 +37,36 @@ You can select the desired time frame by choosing from the following options:
 '12h': '12hour'
 '1d': '1day'
 '1w': '1week'
+
+## Updates made by @ruv
+Here are the main changes made to the original trading script and their benefits:
+
+### Added RSI calculation:
+Benefit: The RSI indicator helps to identify oversold and overbought market conditions, which can be used to make more informed trading decisions.
+
+### Updated the trading logic:
+
+Benefit: The new logic uses a combination of the RSI indicator and GPT-3.5-turbo predictions to make trading decisions. This helps to take into account both technical analysis and the understanding of market trends based on provided data, potentially leading to better results.
+
+### Simplified the GPT-3.5-turbo prompt and reduced max_tokens:
+
+Benefit: A simpler prompt makes it easier for GPT-3.5-turbo to understand the task and provide a relevant response. Reducing max_tokens to 5 ensures that we only get a single-word response ("up" or "down"), making the response processing more efficient.
+Changed the GPT-3.5-turbo output processing:
+
+Benefit: The updated gpt_up_down function directly returns the prediction as a string ("up" or "down"), making it easier to use the prediction in the trading logic.
+
+### Using Replit secrets for API keys:
+
+Benefit: Replit secrets allow you to securely store sensitive information such as API keys, preventing accidental exposure or unauthorized access. This ensures that your API keys are not hardcoded into the script, making it safer to share and collaborate on the code.
+
+### To use Replit secrets, follow these steps:
+
+In your Replit environment, click on the padlock icon in the left sidebar to open the "Secrets" tab.
+
+Add a secret with the key OPENAI_API_KEY and the value set to your OpenAI API key.
+
+Add another secret with the key CCXT_API_KEY and the value set to your CCXT API key.
+
+Add a third secret with the key CCXT_SECRET and the value set to your CCXT secret.
+
+These changes aim to simplify the script, make it more efficient, and potentially improve the trading results by combining technical analysis with GPT-3.5-turbo's understanding of market trends
